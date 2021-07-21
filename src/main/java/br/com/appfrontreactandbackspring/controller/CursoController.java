@@ -14,11 +14,16 @@ import br.com.appfrontreactandbackspring.service.CursoService;
 public class CursoController {
     
     @Autowired
-    private CursoService service;
+    private CursoService service;   
 
     @GetMapping("/cursos")
     public List<Curso> getAllCursos() {
         return service.findAll();
+    }
+
+    @GetMapping("/cursos/{id}")
+    public Curso getCursos(@PathVariable("id") long id) {
+        return service.getCursosById(id);
     }
 
     @PostMapping("/cursos")

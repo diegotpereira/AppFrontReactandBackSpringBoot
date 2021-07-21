@@ -27,6 +27,10 @@ public class CursoService {
         return repository.findAll();
     }
 
+    public Curso getCursosById (long id) {
+        return repository.findById(id).get();
+    }
+
     public void saveOrUpdate(Curso curso) {
         repository.save(curso);
     }
